@@ -1,7 +1,7 @@
 apiVersion: v1
 clusters:
 - cluster:
-    certificate-authority: ./ca.crt
+    certificate-authority: ./.minikube/ca.crt
     extensions:
     - extension:
         last-update: Sun, 02 Feb 2025 10:39:37 UTC
@@ -28,5 +28,5 @@ preferences: {}
 users:
 - name: minikube
   user:
-    client-certificate: ./client.crt
-    client-key: ./client.key
+    client-certificate: ./.minikube/profiles/minikube/client.crt
+    client-key: ./.minikube/profiles/minikube/client.key

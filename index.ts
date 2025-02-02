@@ -1,6 +1,6 @@
 import * as aws from "@pulumi/aws";
 
-const size = "t3.medium";
+const size = "t3.small";
 
 const ami = aws.ec2.getAmiOutput({
     filters: [{
