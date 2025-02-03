@@ -36,5 +36,4 @@ const server = new aws.ec2.Instance("minikube", {
 	},
 });
 
-export const publicIp = server.publicIp;
-export const publicHostName = server.publicDns;
+export const ip = server.publicIp;
