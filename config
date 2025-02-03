@@ -4,7 +4,6 @@ clusters:
     certificate-authority: ./.minikube/ca.crt
     extensions:
     - extension:
-        last-update: Sun, 02 Feb 2025 10:39:37 UTC
         provider: minikube.sigs.k8s.io
         version: v1.35.0
       name: cluster_info
@@ -15,7 +14,6 @@ contexts:
     cluster: minikube
     extensions:
     - extension:
-        last-update: Sun, 02 Feb 2025 10:39:37 UTC
         provider: minikube.sigs.k8s.io
         version: v1.35.0
       name: context_info
