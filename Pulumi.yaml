@@ -1,4 +1,4 @@
-name: ec2-k8s-pulumi
+name: minikube-ec2
 description: A minimal AWS TypeScript Pulumi program
 runtime:
   name: nodejs
