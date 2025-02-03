@@ -5,11 +5,11 @@ pulumi stack init
 ```
 
 ```bash
-pulumi up -s <stack> --diff
+export $(cat .env)
 ```
 
 ```bash
-export $(cat .env)
+pulumi up -s <stack> --diff
 ```
 
 ```bash
