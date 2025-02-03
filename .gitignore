@@ -1,4 +1,6 @@
 /bin/
 /node_modules/
+.minikube/
 Pulumi.*.yaml
 .env
+*.pem

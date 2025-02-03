@@ -1,0 +1,79 @@
+- name: Configure Minikube and NGINX
+  hosts: all
+  become: yes
+  tasks:
+    - name: Update apt cache
+      apt:
+        update_cache: yes
+        cache_valid_time: 3600
+    - name: Install Docker
+      apt:
+        name: docker.io
+        state: present
+
+    - name: Add user to docker group
+      user:
+        name: ubuntu
+        groups: docker
+        append: yes
+
+    - name: Reset SSH session
+      meta: reset_connection
+
+    - name: Start and enable Docker
+      service:
+        name: docker
+        state: started
+        enabled: yes
+
+    - name: Install Minikube
+      apt:
+        deb: "https://storage.googleapis.com/minikube/releases/latest/minikube_latest_amd64.deb"
+        state: present
+
+    - name: Start Minikube
+      become: true
+      become_user: ubuntu
+      command: minikube start
+
+    - name: Install NGINX
+      apt:
+        name: nginx
+        state: present
+
+    - name: Configure NGINX for Minikube API
+      blockinfile:
+        path: /etc/nginx/nginx.conf
+        block: |
+          # minikube proxy
+
+          stream {
+              server {
+                  listen 6443;
+                  proxy_pass 192.168.49.2:8443;
+              }
+          }
+
+    - name: Restart NGINX
+      service:
+        name: nginx
+        state: restarted
+
+    - name: Fetch minikube CA certificate
+      fetch:
+        src: /home/ubuntu/.minikube/ca.crt
+        dest: ./.minikube/ca.crt
+        flat: yes
+
+    - name: Fetch minikube client certificate
+      fetch:
+        src: /home/ubuntu/.minikube/profiles/minikube/client.crt
+        dest: ./.minikube/profiles/minikube/client.crt
+        flat: yes
+
+    - name: Fetch minikube client key
+      fetch:
+        src: /home/ubuntu/.minikube/profiles/minikube/client.key
+        dest: ./.minikube/profiles/minikube/client.key
+        flat: yes
+        mode: '0600'
