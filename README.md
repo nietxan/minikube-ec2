@@ -1,8 +1,25 @@
 usage:
 
-`pulumi stack init`
-`pulumi up -s <stack> --diff`
-`export $(cat .env)`
-`echo "$(pulumi stack output ip) minikube" | sudo tee -a /etc/hosts`
-`ssh-keygen -R minikube`
-`ansible-playbook -i inventory.ini minikube.yaml`
+```bash
+pulumi stack init
+```
+
+```bash
+pulumi up -s <stack> --diff
+```
+
+```bash
+export $(cat .env)
+```
+
+```bash
+echo "$(pulumi stack output ip) minikube" | sudo tee -a /etc/hosts
+```
+
+```bash
+ssh-keygen -R minikube
+```
+
+```bash
+ansible-playbook -i inventory.ini minikube.yaml
+```
