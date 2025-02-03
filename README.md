@@ -1,17 +1,13 @@
 usage:
 
 ```bash
+# prepare AWS EC2 KeyPair named minikube
+
 pulumi stack init
-```
 
-```bash
 pulumi up -s <stack> --diff
-```
 
-```bash
 ./install.sh
-```
 
-```bash
 KUBECONFIG=./config k get all
 ```
