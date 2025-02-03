@@ -11,3 +11,7 @@ pulumi up -s <stack> --diff
 ```bash
 ./install.sh
 ```
+
+```bash
+KUBECONFIG=./config k get all
+```

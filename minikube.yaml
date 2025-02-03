@@ -22,6 +22,9 @@
         deb: "https://storage.googleapis.com/minikube/releases/latest/minikube_latest_amd64.deb"
         state: present
 
+    - name: Reset SSH session
+      meta: reset_connection
+
     - name: Start Minikube
       become: true
       become_user: ubuntu
