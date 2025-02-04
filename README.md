@@ -1,7 +1,7 @@
 usage:
 
 ```bash
-# prepare AWS EC2 KeyPair
+# AWS EC2 KeyPair
 
 mv /path/to/minikube.pem .
 
