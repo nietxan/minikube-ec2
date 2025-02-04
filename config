@@ -5,7 +5,6 @@ clusters:
     extensions:
     - extension:
         provider: minikube.sigs.k8s.io
-        version: v1.35.0
       name: cluster_info
     server: https://minikube:6443
   name: minikube
@@ -15,7 +14,6 @@ contexts:
     extensions:
     - extension:
         provider: minikube.sigs.k8s.io
-        version: v1.35.0
       name: context_info
     namespace: default
     user: minikube
