@@ -9,9 +9,11 @@ chmod 600 minikube.pem
 
 # AWS EC2 with pulumi
 
+yarn install
+
 pulumi stack init
 
-yarn install
+pulumi stack select <stack>
 
 pulumi up -s <stack> --diff
 

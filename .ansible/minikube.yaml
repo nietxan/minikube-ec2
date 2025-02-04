@@ -56,18 +56,18 @@
     - name: Fetch minikube CA certificate
       fetch:
         src: /home/ubuntu/.minikube/ca.crt
-        dest: ./.minikube/ca.crt
+        dest: ../.minikube/ca.crt
         flat: yes
 
     - name: Fetch minikube client certificate
       fetch:
         src: /home/ubuntu/.minikube/profiles/minikube/client.crt
-        dest: ./.minikube/profiles/minikube/client.crt
+        dest: ../.minikube/profiles/minikube/client.crt
         flat: yes
 
     - name: Fetch minikube client key
       fetch:
         src: /home/ubuntu/.minikube/profiles/minikube/client.key
-        dest: ./.minikube/profiles/minikube/client.key
+        dest: ../.minikube/profiles/minikube/client.key
         flat: yes
         mode: '0600'
