@@ -1,5 +1,5 @@
 name: minikube-ec2
-description: A minimal AWS TypeScript Pulumi program
+description: Minikube on EC2
 runtime:
   name: nodejs
   options:
